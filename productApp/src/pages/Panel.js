@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { publicRequest } from "../requestMethods";
+import { AiOutlineFilter, AiOutlineSearch } from "react-icons/ai";
 
 const Panel = () => {
   const [orders, setOrders] = useState([]);
@@ -41,10 +42,10 @@ const Panel = () => {
       } catch (err) {}
     };
     getOrders();
-  }, []);
+  }, [totalVerifiedOrders, totalIncome, totalPendingOrders]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(7);
+  const [itemsPerPage] = useState(7);
   const [filterName, setFilterName] = useState("");
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -84,15 +85,15 @@ const Panel = () => {
       <div className="header_panel">
         <p>Monitor sales and status</p>
         <div>
-          <input
-            className="item"
-            type="text"
-            name=""
-            placeholder="Search product"
+          <div className="group item">
+            <AiOutlineSearch className="icon" />
+            <input placeholder="Search product"
             value={filterName}
-            onChange={(e) => setFilterName(e.target.value)}
-          />
-          <button className="item">Filter</button>
+            onChange={(e) => setFilterName(e.target.value)} type="search" className="input" />
+          </div>
+          <button className="item">
+            <AiOutlineFilter className="icon" /> Filter
+          </button>
         </div>
       </div>
       <table>
