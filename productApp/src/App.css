@@ -105,11 +105,51 @@ label {
 .header_panel div {
   display: flex;
 }
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+.group .input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.group .input:focus,
+input:hover {
+  outline: none;
+  border-color: #606770;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px #606770;
+}
+
+.group .icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+}
 .header_panel p {
   color: #606770;
 }
 .header_panel div .item {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.header_panel div .item .icon {
+  font-size: large;
 }
 .header_panel div input {
   border: solid 1px #dbdbdb;
@@ -194,7 +234,7 @@ table tbody tr td {
   height: 20px;
   justify-content: center;
   width: 20px;
-  background: #E6E6E6;
+  background: #e6e6e6;
   transition: background-color 0.3s ease;
 }
 
@@ -206,10 +246,10 @@ table tbody tr td {
   background-color: #314d3e;
   color: #fff;
 }
-.Unverified{
+.Unverified {
   color: #999999;
 }
-.status{
+.status {
   border-radius: 4px;
   padding: 4px;
   display: flex;
@@ -217,11 +257,11 @@ table tbody tr td {
   width: max-content;
   gap: 10px;
 }
-.Verified{
-  background-color: #DEEDE5;
-  color: #427A5B;
+.Verified {
+  background-color: #deede5;
+  color: #427a5b;
 }
-.Pending{
-  background-color: #FDF8CE;
+.Pending {
+  background-color: #fdf8ce;
   color: #93846;
 }
